@@ -1,0 +1,703 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size : 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    background : rgb(32, 29, 29);
+    color : white;
+    min-width : 800px;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background : black;
+}
+
+::-webkit-scrollbar-thumb {
+    background : white;
+    border-radius : 8px;
+}
+
+#app {
+    width: 100%;
+}
+
+img {
+    height : 400px;
+    transition : 0.5s ease opacity;
+}
+
+button {
+    cursor : pointer;
+    outline : none;
+    border : none;
+}
+
+.container-add-project {
+    display : flex;
+    flex-direction : column;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.container-add-project input {
+    width: 100%;
+    outline : none;
+    border : none;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px;
+    transition : 0.5s ease all;
+}
+
+.container-add-project textarea {
+    padding: 20px;
+    resize : none;
+    border-radius : 15px;
+    border : none;
+    outline : none;
+    width: 100%;
+    min-height : 150px;
+    margin: 20px;
+    transition : 0.5s ease all;
+}
+
+.container-add-project .error {
+    border : 4px solid red;
+    color : red;
+}
+
+.add-project-footer {
+    display : flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.green-button {
+    margin-right: 30px;
+    background : rgb(9, 141, 9);
+    color : white;
+    padding: 15px 50px;
+    border-radius: 15px;
+    border : none;
+    outline : none;
+    transition : 0.5s ease all;
+}
+
+.green-button:hover {
+    transform : scale(0.9);
+    background :rgb(9, 124, 9);
+}
+
+.add-project-footer .red-button {
+    background : rgb(170, 7, 7);
+}
+
+.add-project-footer .red-button:hover {
+    background :rgb(131, 6, 6);
+    transform : scale(0.9);
+}
+
+.projects-container {
+    display : flex;
+    flex-direction : column;
+    align-items: center;
+}
+
+.project {
+    display : flex;
+    position : relative;
+    flex-direction : column;
+    align-items: center;
+    background : black;
+    width: 70%;
+    padding: 30px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    border-radius : 30px;
+    cursor : pointer;
+    transition: 0.5s ease all;
+}
+
+.project img {
+    position : relative;
+    width: 70%;
+}
+
+.project h1 {
+    width: 100%;
+    text-align : center;
+    margin-bottom: 30px;
+    border-bottom : 2px solid white;
+    font-size : 40px;
+    padding: 15px;
+}
+
+.project p {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 80%;
+}
+
+.project:hover {
+    box-shadow: 0 0 40px yellow;
+    transform : scale(0.95);
+}
+
+.not-found-page {
+    position : fixed;
+    top : 0;
+    left : 0;
+    width: 100%;
+    height: 100%;
+}
+
+.project-container {
+    display : flex;
+    justify-content: center;
+}
+
+.data-project {
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    padding: none;
+}
+
+.project-container div h1 {
+    font-size : 45px;
+    text-align: center;
+    border-bottom: 4px solid white;
+    padding: 30px;
+    width: 100%;
+}
+
+.project-container div img {
+    margin-top: 50px;
+    width: 100%;
+    height: 500px;
+}
+
+.project-container div p {
+    margin-top: 50px;
+    width: 100%;
+    margin-bottom: 50px;
+    width: 100%;
+    text-align: center;
+}
+
+.project-container nav {
+    margin-top: 30px;
+    width: 100%;
+    display : grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 50px;
+    justify-items: center;
+    align-items: center;
+}
+
+.graph {
+    position : relative;
+    width: 80%;
+    height : 400px;
+    border : 2px solid white;
+    display : flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0;
+}
+
+.graph-value {
+    width: 100%;
+    min-height : 5%;
+    margin: 0;
+    transition : 0.5s ease all;
+}
+
+.graph-value-data {
+    position : absolute;
+    display : flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size : 40px;
+}
+
+.project-container nav ul {
+    height: 100%;
+    width: 100%;
+    display : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.project-container nav ul li {
+    margin-top: 40px;
+    margin-left: 20px;
+    font-size : 25px;
+}
+
+.project-container nav ul button {
+    margin-top: 40px;
+}
+
+.project-container footer {
+    margin-bottom: 30px;
+    display : flex;
+    padding: 30px;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+
+.project-container footer .red-button {
+    background :rgb(170, 7, 7);
+    margin-bottom: 50px;
+}
+
+.project-container footer .red-button:hover {
+    background :rgb(131, 6, 6);
+    transform : scale(0.9);
+}
+
+.project-container footer .wait {
+    opacity : 0.5;
+}
+
+.home-container {
+    display : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items: center;
+    position : fixed;
+    top : 0;
+    left : 0;
+    width: 100%;
+    height: 100%;
+}
+
+.home-container img {
+    position : relative;
+    left : 0;
+    top : 0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-body {
+    position : absolute;
+    height: 100%;
+    width: 100%;
+    background : rgba(0, 0, 0, 0.5);
+    display : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-body h1 {
+    font-size : 45px;
+    margin-bottom: 30px;
+    animation : move 0.5s ease forwards;
+}
+
+@keyframes move {
+    0%{transform : translateX(-100%); opacity : 0}
+    100%{transform : translateX(0); opacity : 1}
+}
+
+.home-buttons {
+    display : flex;
+    justify-content: space-between;
+}
+
+.home-buttons button {
+    margin: 30px;
+    padding: 20px 30px;
+    text-align: center;
+    border : none;
+    outline : none;
+    border-radius: 30px;
+    background : white;
+    font-weight : bold;
+    color :rgb(9, 124, 9);
+    transition : 0.5s ease all;
+}
+
+.home-buttons button:hover {
+    transform : scale(0.95);
+    background : rgb(182, 169, 169);
+}
+
+.home-buttons .home-green {
+    background :rgb(9, 124, 9);
+    color : white;
+}
+
+.home-buttons .home-green:hover {
+    background :rgb(6, 82, 6);
+    transform : scale(0.95);
+}
+
+input {
+    width: 100%;
+    outline : none;
+    border : none;
+    padding: 20px;
+    border-radius: 30px;
+    margin: 20px;
+    transition : 0.5s ease all;
+}
+
+textarea {
+    padding: 20px;
+    resize : none;
+    border-radius : 15px;
+    border : none;
+    outline : none;
+    width: 100%;
+    min-height : 150px;
+    margin: 20px;
+    transition : 0.5s ease all;
+}
+
+.forms-container {
+    width: 60%;
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.add-project-footer .disabled {
+    opacity : 0.5;
+}
+
+.forms-container .error {
+    border : 4px solid red;
+    color : red;
+}
+
+.nav-footer {
+    position : fixed;
+    bottom : 0;
+    left : 0;
+    width: 100%;
+    display : grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.nav-footer button {
+    background : rgb(32, 29, 29);
+    color : white;
+    width: 100%;
+    padding: 15px;
+    border-top : 2px solid white;
+}
+
+.nav-footer .active {
+    color : green;
+}
+
+.user-container {
+    width: 80%;
+    position : relative;
+    display : flex;
+    flex-direction : column;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.user-info {
+    display : flex;
+    width: 100%;
+    padding-bottom: 5px;
+    margin: 30px;
+}
+
+.user-info h1 {
+    width: 100%;
+    padding: 30px;
+    border-radius: 30px;
+    border : 2px solid yellow;
+    box-shadow : 0 0 10px yellow;
+}
+
+.user-buttons {
+    display : flex;
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 50px;
+}
+
+.user-buttons .red-button {
+    background :rgb(170, 7, 7);
+    margin: 50px;
+}
+
+.user-buttons .red-button:hover {
+    background :rgb(131, 6, 6);
+    transform : scale(0.95);
+}
+
+.search-container {
+    width: 100%;
+}
+
+.search-container nav {
+    width: 100%;
+    display : flex;
+    justify-content: flex-end;
+    padding-bottom: 50px;
+    border-bottom : 2px solid white;
+}
+
+.search-container nav input {
+    width: 350px;
+    font-size : 18px;
+    padding: 20px;
+}
+
+.search-projects {
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 80px;
+    cursor : pointer;
+}
+
+.search-projects h1 {
+    width: 80%;
+    padding: 30px;
+    border-radius: 30px;
+    font-size : 30px;
+    background :rgba(0, 0, 0, 0.5);
+    margin-top: 30px;
+    display : flex;
+    justify-content: space-between;
+    transition : 0.5s ease all;
+}
+
+.search-projects h1:hover {
+    transform : scale(0.95);
+    opacity : 0.8;
+}
+
+.new-project {
+    color : black;
+    text-align : center;
+    padding: 10px;
+    border-radius: 20px;
+    background : yellow;
+    box-shadow : 0 0 20px yellow;
+}
+
+.popup-container {
+    background : rgba(0, 0, 0, 0.5);
+    position : fixed;
+    top : 0;
+    left : 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s ease opacity;
+}
+
+.popup-body {
+    position : fixed;
+    bottom : 0;
+    left : 0;
+    width: 100%;
+    background : white;
+    padding: 30px;
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.popup-body input {
+    position : relative;
+    width: 80%;
+}
+
+.popup-footer {
+    width: 80%;
+    display : flex;
+    justify-content: flex-end;
+    margin-top: 50px;
+}
+
+.popup-footer button {
+    margin-right: 20px;
+}
+
+.popup-footer .red-button {
+    background :rgb(170, 7, 7);
+}
+
+.popup-footer .red-button:hover {
+    background :rgb(131, 6, 6);
+    transform : scale(0.95);
+}
+
+.popup-container-enter-from, .popup-container-leave-to {
+    opacity : 0;
+}
+
+.popup-body-enter-active {
+    animation : move 0.5s ease forwards;
+}
+
+.popup-body-leave-active {
+    animation : move 0.5s ease reverse;
+}
+
+@keyframes move {
+    0%{transform : translateY(100%)}
+    100%{transform : translateY(0)}
+}
+
+.messages-container {
+    display : flex;
+    width: 100%;
+    flex-direction : column;
+    align-items: center;
+}
+
+.messages-container header {
+    position : fixed;
+    top : 0;
+    left : 0;
+    display : flex;
+    padding: 8px;
+    width: 100%;
+    border-bottom : 2px solid white;
+    align-items: center;
+    justify-content: flex-start;
+    background : rgb(32, 29, 29);
+}
+
+.messages-container header h1 {
+    padding: 20px 25px;
+    background : blueviolet;
+    border-radius : 360px;
+    cursor : pointer;
+    transition : 0.5s ease all;
+}
+
+.messages-container header h1:hover {
+    transform : scale(0.95);
+    opacity : 0.8;
+}
+
+.messages-container header h2 {
+    margin-left: 20px;
+}
+
+.messages {
+    margin-top: 100px;
+    margin-bottom: 200px;
+    display : flex;
+    width: 95%;
+    flex-direction: column;
+    height: 100%;
+}
+
+.message {
+    margin-top: 20px;
+    font-size : 15px;
+    border: none;
+    background : -webkit-linear-gradient(left, violet, blue);
+    width: 30%;
+    max-width : 30%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.messages .main-message {
+    background : -webkit-linear-gradient(left, purple, red);
+    align-self: flex-end;
+}
+
+.form-message {
+    position : fixed;
+    padding: 20px;
+    bottom : 0;
+    left : 0;
+    width: 100%;
+    display : flex;
+    justify-content: center;
+    background : black;
+    align-items : center;
+}
+
+.message-data-form {
+    padding: 20px;
+    font-size : 20px;
+    width: 50%;
+}
+
+.message-submit {
+    font-size : 15px;
+    padding: 15px;
+    border-radius : 30px;
+    margin-left: 20px;
+}
+
+.back-button {
+    background :rgb(32, 29, 29);
+    color : white;
+    padding: 20px;
+    border-radius: 360px;
+    margin-right: 10px;
+    transition : 0.5s ease background;
+}
+
+.back-button:hover {
+    background :rgb(59, 55, 55);
+}
+
+.form-message .dis-button {
+    opacity : 0.5;
+}
+
+.login-footer {
+    justify-content: center;
+}
+
+.spiner-container {
+    position : fixed;
+    top : 0;
+    left : 0;
+    background : black;
+    height: 100%;
+    width: 100%;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width : 650px) {
+    .home-buttons {
+        flex-direction : column;
+    }
+
+    .home-container h1 {
+        font-size : 25px;
+    }
+
+    .home-buttons button {
+        transform : scale(0.7);
+        margin: 0;
+    }
+}
