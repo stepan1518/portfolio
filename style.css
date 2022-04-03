@@ -26,6 +26,12 @@ body {
 
 #app {
     width: 100%;
+    display : flex;
+    justify-content : center;
+}
+
+#app div {
+    max-width : 1646px;
 }
 
 img {
