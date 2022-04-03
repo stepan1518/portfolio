@@ -164,6 +164,7 @@ button {
     display : flex;
     justify-content: center;
     max-width : 1709px;
+    margin : 0 auto;
 }
 
 .data-project {
