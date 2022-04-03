@@ -26,12 +26,6 @@ body {
 
 #app {
     width: 100%;
-    display : flex;
-    justify-content : center;
-}
-
-#app div {
-    max-width : 1646px;
 }
 
 img {
@@ -124,6 +118,7 @@ button {
     align-items: center;
     background : black;
     width: 70%;
+    max-width : 1212px;
     padding: 30px;
     margin-top: 30px;
     margin-bottom: 100px;
