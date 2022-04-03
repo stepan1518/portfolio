@@ -28,11 +28,6 @@ body {
     width: 100%;
 }
 
-#app div {
-    display : flex;
-    justify-content : center;
-}
-
 img {
     height : 400px;
     transition : 0.5s ease opacity;
